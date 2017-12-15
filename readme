@@ -1,0 +1,37 @@
+Simple C Compiler
+
+The four main stages in compiler design : 
+	Lexical Analysis - The input program is broken down into tokens (identifiers, operators, numbers, keywords, punctuators). A symbol table is created with the list of tokens obtained from the input. Lexical Analysis is done using Flex tool to generate tokens. 
+	To install Lex :
+	sudo apt-get install flex 
+	Execution : 
+	lex prog.l
+	cc lex.yy.c -ll
+	./a.out
+	cat output.txt
+
+	Syntax Analysis - In this step, the tokens generated after lexical analysis is examined to construct syntactically correct sentences and the syntax errors present are printed out (missing parenthesis, semicolon). Syntax Analysis is performed using Yacc tool as a parser.
+	To install Yacc :
+	sudo apt-get install bison
+	sudo apt-get install byacc
+	Execution :
+	lex prog.l
+	yacc prog.y
+	cc y.tab.c -ll -ly
+	./a.out
+
+	Semantic Analysis - The parsed output generated in the above step is examined for semantic errors and the abstract syntax tree is printed. Semantic errors like type checking, undeclared variables, multiple declarations of variables are verified.
+	Execution :
+	lex prog.l
+	yacc prog.y
+	cc y.tab.c -ll -ly
+	./a.out
+	cat out.txt 
+
+	lex prog.l
+	yacc absprog.y
+	cc y.tab.c -ll -ly
+	./a.out
+	cat output.txt 
+
+	Code Generation - Using the abstract syntax tree we need to generate the intermediate code in three address code format.

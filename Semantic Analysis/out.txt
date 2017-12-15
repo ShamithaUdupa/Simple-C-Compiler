@@ -1,0 +1,2 @@
+ERROR: Undeclared Variable c
+ERROR: Void Type Error
